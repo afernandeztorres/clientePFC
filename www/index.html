@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>ENCUESTAS ONLINE</title>
+  	<meta charset="utf-8" />
+ 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+    
+    <link rel="stylesheet" href="js/lib/jquery.mobile.structure-1.2.0.min.css" /> 
+    <link rel="stylesheet" href="res/themes/estilos.min.css">
+    <link rel="stylesheet" href="res/themes/jquery.alerts.css"  type="text/css" media="screen" />
+	
+	<script src="js/lib/phonegap-1.0.0.js"></script>
+	<script src="js/encuesta.js"></script>
+	<script src="js/lib/jquery.js"></script>
+    <script src="js/lib/jquery.alerts.js" type="text/javascript"></script>
+	<script src="js/lib/jquery.mobile-1.2.0.min.js"></script>
+	<script src="js/lib/translate2.js"></script>
+	<script src="js/lib/estilos.js"></script>
+	<script src="js/lib/jquery.flot.js"></script>
+	<script src="js/lib/jquery.cookie.js"></script>
+	
+	<script >
+		var manager = new Encuesta ();
+	</script>
+	
+</head>
+<body>
+
+
+<!-- Menú principal -->
+ <div data-role="page" id="pageMenu">
+    <div id="header" data-theme="c" data-role="header" data-position="fixed">
+        <h3>
+            ENCUESTAS ONLINE
+        </h3>
+    </div>
+    <div data-role="content">
+        <ul id="listMenu" data-role="listview" data-divider-theme="b" data-inset="true">
+            <li data-role="list-divider" data-role="heading">
+                <label id="Menu_Principal"></label>
+            </li>
+            <li data-theme="a">
+                <a onClick="manager.getTipos();" data-transition="slide">
+                    <label id="Encuestas"></label>
+                    <span class="ui-li-count"> 
+                    </span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+    <div data-theme="a" data-role="footer" data-position="fixed">
+        <h3 id="footer">
+           <br>
+	            <img src="res/england.png" title="Idioma Ingles" width="40" height="20" alt="ingla" onClick="manager.translate2('uk');">
+	            <img src="res/spain.gif" title="Idioma Español" width="40" height="20" alt="esp"onClick="manager.translate2('es');">
+           </br>
+        </h3>
+    </div>
+</div>               	
+
+
+<!--  SubMenu realizar encuestas -->
+<div data-role="page" id="pageConfigurarEncuesta">
+    <div id="header" data-theme="a" data-role="header" data-position="fixed">
+        <h3>
+            ENCUESTAS ONLINE
+        </h3>
+    </div>
+    <div data-role="content">       
+	<form id="formSolicitar">
+        <div data-role="fieldcontain">  
+            <select id="tipoEncuesta" name="tipoEncuesta" data-theme="a" data-mini="true" onChange="manager.getSubTipos();" align="center">
+                		 <label id=category></label>
+                		 <option id="tipoEncuestaLabel" value="0"></option> 
+            </select>
+        </div>
+        <div data-role="fieldcontain">
+            <select id="subTipoEncuesta" name="subTipoEncuesta" data-theme="a" data-mini="true" align="center">
+               	 <option id="subTipoEncuestaLabel" value="0">
+               	 	<label id=encuesta></label>
+               	 </option> 
+            </select>
+        </div>
+
+        <a  data-role="button" onClick="manager.solicitarEncuesta();" data-theme="a" data-icon="arrow-r" data-iconpos="right"  data-mini="true"><label id ="solicitar"></label></a>
+        <a  data-role="button" onClick="manager.solicitarGrafico();" data-theme="a" data-icon="arrow-r" data-iconpos="right"  data-mini="true"><label id="grafos"></label></a>
+	
+
+	</form>
+    
+   
+   	</div>
+    
+    <div data-theme="a" data-role="footer" data-position="fixed">
+        <h3 id="footer">
+            
+        </h3>
+    </div>
+    </div>
+    <div data-role="page" id="pageGrafico">
+    <div id="header" data-theme="c" data-role="header" data-position="fixed">
+        <h3>
+            ON-ENCUESTAS.COM
+        </h3>
+    </div>
+    <div data-role="content">
+    	<!-- Construccion dinámica de los graficos -->
+    	<div id="graficos"></div>
+    	<div id="botonInicio"></div>
+    <div data-theme="a" data-role="footer" data-position="fixed">
+    </div>
+</div> 
+       
+   <script> var r = new Translate2("es");
+    			r.translate2local();
+    </script>
+    
+	<div id="dialog-modal" title="On-Encuestas" style="display: none;">
+	</div>
+</div>
+</body>
+</html>
