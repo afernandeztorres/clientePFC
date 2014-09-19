@@ -43,6 +43,8 @@ var Encuesta = function(){
 	this.getTipos = function () {
 		
 		var idioma = this.idio.local;
+		//Vacíamos el contenido previo
+		$("#tipoEncuesta").empty();
 		llamadaAjax (this.url+ "action=getTipos" , "&idioma="+idioma, 
 				function (json){
 						$.each(json, function (index, value){			
@@ -61,6 +63,8 @@ var Encuesta = function(){
 	this.getSubTipos = function () {
 		
 		var idioma = this.idio.local;
+		//Vaciamos lo que contenía previamente
+		$("#subTipoEncuesta").empty();
 		llamadaAjax (this.url+ "action=getSubTipos" , "&tipoEncuesta="+$("#tipoEncuesta option:selected").val() + "&idioma="+idioma, 
 				function (json){
 						$("#subTipoEncuesta").html("");
