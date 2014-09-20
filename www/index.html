@@ -32,7 +32,7 @@
 
 <!-- Menú principal -->
  <div data-role="page" id="pageMenu">
-    <div id="header" data-theme="c" data-role="header" data-position="fixed">
+    <div id="header" data-theme="a" data-role="header" data-position="fixed">
         <h3>
             ENCUESTAS ONLINE
         </h3>
@@ -42,7 +42,7 @@
             <li data-role="list-divider" data-role="heading">
                 <label id="Menu_Principal"></label>
             </li>
-            <li data-theme="a">
+            <li data-theme="c">
                 <a onClick="manager.getTipos();" data-transition="slide">
                     <label id="Encuestas"></label>
                     <span class="ui-li-count"> 
@@ -73,21 +73,21 @@
     <div data-role="content">       
 	<form id="formSolicitar">
         <div data-role="fieldcontain">  
-            <select id="tipoEncuesta" name="tipoEncuesta" data-theme="a" data-mini="true" onChange="manager.getSubTipos();" align="center">
+            <select id="tipoEncuesta" name="tipoEncuesta" data-theme="c" data-mini="true" onChange="manager.getSubTipos();" align="center">
                 		 <label id=category></label>
                 		 <option id="tipoEncuestaLabel" value="0"></option> 
             </select>
         </div>
         <div data-role="fieldcontain">
-            <select id="subTipoEncuesta" name="subTipoEncuesta" data-theme="a" data-mini="true" align="center">
+            <select id="subTipoEncuesta" name="subTipoEncuesta" data-theme="c" data-mini="true" align="center">
                	 <option id="subTipoEncuestaLabel" value="0">
                	 	<label id=encuesta></label>
                	 </option> 
             </select>
         </div>
 
-        <a  data-role="button" onClick="manager.solicitarEncuesta();" data-theme="a" data-icon="arrow-r" data-iconpos="right"  data-mini="true"><label id ="solicitar"></label></a>
-        <a  data-role="button" onClick="manager.solicitarGrafico();" data-theme="a" data-icon="arrow-r" data-iconpos="right"  data-mini="true"><label id="grafos"></label></a>
+        <a  data-role="button" onClick="manager.solicitarEncuesta();" data-theme="c" data-icon="arrow-r" data-iconpos="right"  data-mini="true"><label id ="solicitar"></label></a>
+        <a  data-role="button" onClick="manager.solicitarGrafico();" data-theme="c" data-icon="arrow-r" data-iconpos="right"  data-mini="true"><label id="grafos"></label></a>
 	
 
 	</form>
@@ -95,7 +95,7 @@
    
    	</div>
     
-    <div data-theme="a" data-role="footer" data-position="fixed">
+    <div data-theme="c" data-role="footer" data-position="fixed">
         <h3 id="footer">
             
         </h3>
@@ -111,7 +111,7 @@
     	<!-- Construccion dinámica de los graficos -->
     	<div id="graficos"></div>
     	<div id="botonInicio"></div>
-    <div data-theme="a" data-role="footer" data-position="fixed">
+    <div data-theme="c" data-role="footer" data-position="fixed">
     </div>
 </div> 
        
