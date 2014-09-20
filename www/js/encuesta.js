@@ -10,26 +10,26 @@ var Encuesta = function(){
 	this.est = new Estilos("-c ", "c");
 	
 	//Título de la ventana de los mensajes emergentes
-	this.tituloVentana='On-Encuestas';
+	var tituloVentana='On-Encuestas';
 	
 	//Textos para los mensajes.
-	this.msgNotSel 			= 'msgNotSel';
-	this.msgEncVotada		= 'msgEncVotada';
-	this.msgEncEnvOK		= 'msgEncEnvOK';
-	this.msgEncEnvNOK		= 'msgEncEnvNOK';
-	this.msgInicio 			= 'msgInicio';
+	var msgNotSel 			= 'msgNotSel';
+	var msgEncVotada		= 'msgEncVotada';
+	var msgEncEnvOK		= 'msgEncEnvOK';
+	var msgEncEnvNOK		= 'msgEncEnvNOK';
+	var msgInicio 			= 'msgInicio';
 	
-	this.msgNotSel_es 			= 'Debe seleccionar una categoría y una encuesta para poder continuar';
-	this.msgEncVotada_es		= 'Esta enucesta ya ha sido votada';
-	this.msgEncEnvOK_es			= 'La encuesta se ha envidado correctamente';
-	this.msgEncEnvNOK_es		= 'No se ha podido enviar la encuesta';
-	this.msgInicio_es 			= 'Volver';
+	var msgNotSel_es 			= 'Debe seleccionar una categoría y una encuesta para poder continuar';
+	var msgEncVotada_es		= 'Esta enucesta ya ha sido votada';
+	var msgEncEnvOK_es			= 'La encuesta se ha envidado correctamente';
+	var msgEncEnvNOK_es		= 'No se ha podido enviar la encuesta';
+	var msgInicio_es 			= 'Volver';
 
-	this.msgNotSel_en 			= 'You must select a category and an inquiry';
-	this.msgEncVotada_en		= 'This inquiry is already voted';
-	this.msgEncEnvOK_en			= 'Inquiry sent succesfully';
-	this.msgEncEnvNOK_en		= 'It was not possible to send the inquiry';
-	this.msgInicio_en 			= 'Back';
+	var msgNotSel_en 			= 'You must select a category and an inquiry';
+	var msgEncVotada_en		= 'This inquiry is already voted';
+	var msgEncEnvOK_en			= 'Inquiry sent succesfully';
+	var msgEncEnvNOK_en		= 'It was not possible to send the inquiry';
+	var msgInicio_en 			= 'Back';
 		
 	//Url A la que atacarán las peticioens Ajax.
 	this.url= "http://afernandeztorres.ddns.net:8080/Encuestas/doEncuesta?";
@@ -214,12 +214,25 @@ var Encuesta = function(){
 		
 			function(json,document){
 			if (json.error === "ok"){
+                    $.mobile.hidePageLoadingMsg();
+                    jAlert(this.getMsg(this.msgEncEnvOK), tituloVentana, function(r) {
+                        location.reload();
+                    });
+                }
+                else{
+                     $.mobile.hidePageLoadingMsg();
+                        jAlert(this.getMsg(this.msgEncEnvKO), tituloVentana, function(r) {
+                            location.reload();
+                        });
+                    }
+			//if (json.error === "ok"){
 				//No es capaz de usar el jAlert porque no debe tener el scope
-				document.jAlert(this.getMsg(this.msgEncEnvOK),this.tituloVentana);
-				$.cookie('encuesta'+$("#subTipoEncuesta").val(), $("#subTipoEncuesta").val(), { expires: 7 });
-			}else{
-				jAlert(this.getMsg(this.msgEncEnvNOK), this.tituloVentana);
-			}
+			//	document.jAlert(this.getMsg(this.msgEncEnvOK),this.tituloVentana);
+
+			//	$.cookie('encuesta'+$("#subTipoEncuesta").val(), $("#subTipoEncuesta").val(), { expires: 7 });
+			//}else{
+			//	jAlert(this.getMsg(this.msgEncEnvNOK), this.tituloVentana);
+			//}
 		});
 		location.reload();
 	};
