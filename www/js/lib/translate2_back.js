@@ -11,6 +11,7 @@ this.Menu_Principal_es="Menu";
 this.Encuestas_es="Encuestas";
 this.Encuesta_es="Encuesta";
 this.Category_es="Categoría"
+this.irInicio_es="Vovler";
 //------ FIN Etiquetas castellano	
 
 //------- INICIO Etiquetas Inglés
@@ -18,6 +19,7 @@ this.Menu_Principal_uk="Main Menu";
 this.Encuestas_uk="Polls";
 this.Encuesta_uk="Poll";
 this.Category_uk="Category";
+this.irInicio_uk="Back";
 //------ FIN Etiquetas Inglés
 
 

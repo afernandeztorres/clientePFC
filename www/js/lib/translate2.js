@@ -17,8 +17,9 @@ var Translate2 = function (local){
 	this.solicitar_es="Realizar la Encuesta";
 	this.Si_es= "Sí"
 	this.grafos_es="Ver la gráfica de resultados";
-	this.tipoEncuestaLabel_es = "Categoría";
-	this.subTipoEncuestaLabel_es = "Encuesta";
+	this.tipoEncuesta_es = "Categoría";
+	this.subTipoEncuesta_es = "Encuesta";
+    this.irInicio_es = "Volver";
 	
 	
 	
@@ -33,8 +34,9 @@ var Translate2 = function (local){
 	this.solicitar_uk="Report the Inquiry";
 	this.Si_uk="Yes";
 	this.grafos_uk="Show graphic reports";
-	this.tipoEncuestaLabel_uk = "Category";
-	this.subTipoEncuestaLabel_uk = "Inquiry";
+	this.tipoEncuesta_uk = "Category";
+	this.subTipoEncuesta_uk = "Inquiry";
+    this.irInicio_uk = "Back";
 	
 	this.Menu_Principal_component="#Menu_Principal";
 	this.Encuestas_component="#Encuestas";
@@ -47,8 +49,9 @@ var Translate2 = function (local){
 	this.solicitar_component="#solicitar";
 	this.Si_component="#Si";
 	this.grafos_component="#grafos";
-	this.tipoEncuestaLabel_component = "#tipoEncuestaLabel";
-	this.subTipoEncuestaLabel_component = "#subTipoEncuestaLabel";
+	this.tipoEncuesta_component = "#tipoEncuestaLabel";
+	this.subTipoEncuesta_component = "#subTipoEncuestaLabel";
+    this.irInicio_component = "#irInicio";
 
 	
 	this.translate2local=function () {
@@ -67,9 +70,9 @@ var Translate2 = function (local){
 				$(dictionary.solicitar_component).html(eval("dictionary.solicitar_" +dictionary.local));
 				$(dictionary.Si_component).html(eval("dictionary.Si_" +dictionary.local));
 				$(dictionary.grafos_component).html(eval("dictionary.grafos_" +dictionary.local));
-				
-				$(dictionary.tipoEncuestaLabel_component).html(eval("dictionary.tipoEncuestaLabel_" +dictionary.local));
-				$(dictionary.subTipoEncuestaLabel_component).html(eval("dictionary.subTipoEncuestaLabel_" +dictionary.local));
+				$(dictionary.tipoEncuesta_component).html(eval("dictionary.tipoEncuesta_" +dictionary.local));
+				$(dictionary.subTipoEncuesta_component).html(eval("dictionary.subTipoEncuesta_" +dictionary.local));
+                $(dictionary.irInicio_component).html(eval("dictionary.irInicio_" +dictionary.local));
 		}
 		
 }
